@@ -38,4 +38,7 @@ response = requests.request("GET", url, headers=hdrs.headers)
 
 data = json_parser.parse(response.text)
 
+# You can manipulate this data however you want from this point on
+# You can also remove the json_parser and use your own thing or do what you want
+
 print(data)
