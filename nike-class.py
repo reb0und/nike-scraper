@@ -35,12 +35,12 @@ def go():
     data = r.json()
     for x in data["objects"]:
         if x["available"] is True:
-            print('[{}] ***instock***'.format(
-                str(datetime.now())), x["level"])
+            print('[{dt}] - [{sku}] - [{region}] - ***instock***'.format(dt=str(datetime.now()),
+                  sku=uip.sku, region=uip.region), x["level"])
         elif x["available"] is False:
-            print('[{}] oos'.format(
-                str(datetime.now())), x["level"])
-        print('\-------------------------------------------/')
+            print('[{dt}] - [{sku}] - OOS - [{region}]'.format(dt=str(datetime.now()),
+                  sku=uip.sku, region=uip.region))
+        print('\---------------------------------------------------------------/')
 
     time.sleep(int(uip.delay))
 
