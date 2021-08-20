@@ -13,6 +13,7 @@ uip = Input('', '')
 def getUsrInput():
     uip.sku = input('Enter SKU: ')
     uip.region = input('Enter region (US/EU): ')
+    return(uip.sku, uip.region)
 
 
 getUsrInput()
