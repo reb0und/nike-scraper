@@ -8,6 +8,7 @@ class Input:
 
 
 uip = Input('', '')
+# Need to clean up
 
 
 def getUsrInput():
