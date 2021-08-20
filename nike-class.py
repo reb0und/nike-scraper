@@ -7,7 +7,16 @@ class Input:
         inp.region = region
 
 
-uip = Input('DJ1034-200', 'EU')
+uip = Input('', '')
+
+
+def getUsrInput():
+    uip.sku = input('Enter SKU: ')
+    uip.region = input('Enter region (US/EU): ')
+
+
+getUsrInput()
+
 
 url = "https://api.nike.com/deliver/available_gtins/v3?filter=styleColor({sku})&filter=merchGroup({region})".format(
     sku=uip.sku, region=uip.region)
@@ -16,5 +25,6 @@ url = "https://api.nike.com/deliver/available_gtins/v3?filter=styleColor({sku})&
 def go():
     r = requests.request("GET", url)
     print(r.json())
-go()
 
+
+go()
