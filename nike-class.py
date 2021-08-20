@@ -15,10 +15,10 @@ uip = Input('', '', '')
 
 
 def getUsrInput():
+    uip.delay = input('Enter delay: ')
     uip.sku = input('Enter SKU: ')
     uip.region = input('Enter region (US/EU/MX/CA/AU): ')
-    uip.delay = input('Enter delay: ')
-    return(uip.sku, uip.region, uip.delay)
+    return(uip.delay, uip.sku, uip.region)
 
 
 getUsrInput()
@@ -35,7 +35,7 @@ def go():
     data = r.json()
     for x in data["objects"]:
         if x["available"] is True:
-            print('[{}] instock'.format(
+            print('[{}] ***instock***'.format(
                 str(datetime.now())), x["level"])
         elif x["available"] is False:
             print('[{}] oos'.format(
