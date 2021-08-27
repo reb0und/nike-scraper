@@ -27,8 +27,6 @@ getUsrInput()
 url = "https://api.nike.com/deliver/available_gtins/v3?filter=styleColor({sku})&filter=merchGroup({region})".format(
     sku=uip.sku, region=uip.region)
 
-rd = open("response.json", "r")
-
 
 def go():
     r = requests.request("GET", url)
