@@ -42,9 +42,6 @@ def go():
 
     time.sleep(int(uip.delay))
 
-    # remove all json loading later
-    # clean up and make faster
-
 
 while True:
     go()
